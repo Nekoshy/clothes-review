@@ -38,3 +38,70 @@ label {
     font-weight: bold;
     color: #ed6b23;
 }
+
+input {
+    -webkit-appearance: none;
+    border: 1px solid #ed6b23;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 380px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.mbs-0 {
+    margin-block-start: 0;
+}
+
+.d-none {
+    display:none;
+}
+
+.d-block {
+    display: block;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-65 {
+    width: 65%;
+}
+
+.whiteButton {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 1px solid #ed6b23;
+    background: #FFFFFF;
+    border-radius: 10px;
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+.orangeButton {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 1px solid #ed6b23;
+    background: #ed6b23;
+    border-radius: 10px;
+    height: 45px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.mbe-5 {
+    margin-block-end: 5px;
+}

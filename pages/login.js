@@ -21,11 +21,11 @@ const Login = () => {
                         <div className={styles.inputs}>
                             <div className='row d-flex justify-center'>
                                 <label htmlFor='login'>Nazwa użytkownika</label>
-                                <input className={styles.input} name='login' id='login'/>
+                                <input name='login' id='login'/>
                             </div>
                             <div className='row d-flex justify-center'>
                                 <label htmlFor='password'>Hasło</label>
-                                <input className={styles.input} name='password' id='password' type='password'/>
+                                <input name='password' id='password' type='password'/>
                             </div>
                             <div className='row d-flex justify-center'>
                                 <button className={styles.button}>

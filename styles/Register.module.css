@@ -1,0 +1,23 @@
+.leftSide {
+    float: left;
+    width: 25%;
+    border: 2px solid rgba(237, 107, 35, 0.25);
+    border-radius: 20px;
+    padding:30px;
+}
+
+.rightSide {
+    width: 65%;
+    border: 2px solid rgba(237, 107, 35, 0.25);
+    border-radius: 20px;
+    float: right;
+    padding:30px;
+}
+
+.input {
+    width: 100%!important;
+}
+
+.inputDim {
+    width: 50%!important;
+}
