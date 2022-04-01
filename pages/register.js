@@ -66,6 +66,9 @@ const Register = () => {
                         <img id="menpic" src="mendim.png" height="400px" className="d-none"/>
                     </div>
                 </div>
+                <div className="w-25 p-30">
+                    <button className="orangeButton mt-25">Zarejestruj się</button>
+                </div>
             </div>
         </div>
     );

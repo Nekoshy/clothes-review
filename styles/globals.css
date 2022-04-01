@@ -73,11 +73,15 @@ input {
 }
 
 .w-45 {
-    width: 45%;
+    width: 45%!important;
 }
 
 .w-65 {
     width: 65%;
+}
+
+.w-25 {
+    width: 25% !important;
 }
 
 .whiteButton {
@@ -104,4 +108,16 @@ input {
 
 .mbe-5 {
     margin-block-end: 5px;
+}
+
+.p-30 {
+    padding:30px;
+}
+
+.mt-25 {
+    margin-top:25px!important;
+}
+
+.mt-10vh {
+    margin-top: 10vh;
 }
