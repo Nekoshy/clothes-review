@@ -121,3 +121,19 @@ input {
 .mt-10vh {
     margin-top: 10vh;
 }
+
+.br-20 {
+    border-radius: 20px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.orangeBorder {
+    background: #FFFFFF;
+    border: 2px solid rgba(237, 107, 35, 0.25);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
