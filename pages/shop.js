@@ -1,14 +1,14 @@
 import Navbar from '../components/navbar'
 
-const AddShop = () => {
+const Shop = () => {
     return (
         <div>
             <Navbar/>
             <div className="container">
-                Dodawanie sklepu
+                Strona sklepu
             </div>
         </div>
     )
 }
 
-export default AddShop
+export default Shop;

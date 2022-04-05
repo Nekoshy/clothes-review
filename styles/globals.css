@@ -84,6 +84,10 @@ input {
     width: 25% !important;
 }
 
+.w-50 {
+    width: 50%;
+}
+
 .whiteButton {
     -webkit-appearance: none;
     width: 100%;
@@ -144,4 +148,23 @@ input {
 
 .pl-15 {
     padding-left: 15px;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.invInput {
+    border:none;
+    margin:0;
+    padding: 0 20px 0 20px;
+    background: none;
 }
