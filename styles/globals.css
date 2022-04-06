@@ -168,3 +168,24 @@ input {
     padding: 0 20px 0 20px;
     background: none;
 }
+
+.invInput100w {
+    border:none;
+    margin:0;
+    padding: 0 20px 0 20px;
+    background: none;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}

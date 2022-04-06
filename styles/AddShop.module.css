@@ -1,0 +1,15 @@
+.leftSide {
+    width: 50%;
+    display: inline-block;
+    padding: 30px;
+}
+
+.rightSide {
+    width: 50%;
+    display: inline-block;
+    padding: 30px;
+    text-align: end;
+    justify-content: end;
+    justify-items: end;
+    align-items: end;
+}
