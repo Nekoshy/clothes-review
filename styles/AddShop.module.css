@@ -12,3 +12,8 @@
     justify-content: end;
     justify-items: end;
 }
+
+.rightSideIn {
+    width: 50%;
+    display: inline-block;
+}
