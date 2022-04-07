@@ -189,3 +189,7 @@ td {
 .flex-wrap {
     flex-wrap: wrap;
 }
+
+.align-items-start {
+    align-items: start;
+}

@@ -141,7 +141,7 @@ const AddShop = () => {
                         Nowy sklep
                     </h1>
                 </div>
-                <div className='orangeBorder'>
+                <div className='orangeBorder align-items-start'>
                     <div className={styles.leftSide}>
                         <div className='row'>
                             <h4>Sklep oferuje ubrania dla:</h4>
@@ -164,6 +164,17 @@ const AddShop = () => {
                                     <button className='orangeButton' style={{width:'150px'}}>Dodaj zdjęcie</button>
                                 </div>
                             </div>
+                        </div>
+                        <div className='row' style={{float:'right', margin:'20px 0 0 0'}}>
+                            <label htmlFor='shopname' style={{width:'auto'}}>Nazwa sklepu</label>
+                            <input name='shopname' id='shopname' placeholder='Podaj nazwę sklepu' style={{width:'200px'}}/>
+                        </div>
+                        <div className='row' style={{float:'right'}}>
+                            <label htmlFor='link' style={{width:'auto'}}>Link do strony internetowej</label>
+                            <input name='link' id='link' placeholder='Podaj adres do strony internetowej' style={{width:'200px'}}/>
+                        </div>
+                        <div className='row' style={{float:'right'}}>
+                            <button className='orangeButton' style={{width:'200px'}}>Dodaj sklep</button>
                         </div>
                     </div>
                 </div>
