@@ -1,6 +1,8 @@
 import Navbar from '../components/navbar'
 
 const Home = () => {
+    const { API_PORT } = process.env;
+    const port = process.env.PORT || API_PORT;
     return (
         <div>
             <Navbar/>

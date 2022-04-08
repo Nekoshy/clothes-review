@@ -4,10 +4,12 @@ const UsersSchema = new mongoose.Schema({
     username:{
         type:String,
         required:[true,"Proszę podać nazwę"],
+        unique:true,
     },
     email:{
         type:String,
-        required:[true,"Podaj email"]
+        required:[true,"Podaj email"],
+        unique:true,
     },
     password:{
         type:String,
@@ -16,6 +18,9 @@ const UsersSchema = new mongoose.Schema({
     gender:{
         type:String,
         required:true
+    },
+    token:{
+        type:String,
     }
 })
 
