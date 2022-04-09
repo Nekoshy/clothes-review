@@ -21,15 +21,6 @@ export default async function register(req, res) {
         password: encryptedPassword,
         gender,
     });
-    // save user token
-    const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.TOKEN_KEY,
-        {
-            expiresIn: "2h",
-        }
-    );
-    user.token = token;
 
     res.status(201).json(user);
 }

@@ -1,8 +1,16 @@
 import Navbar from '../components/navbar'
+import {useContext, useEffect} from "react";
+import {checkToken} from "../util/checkToken";
+import {LoginContext} from "../context/logincontext";
 
 const Home = () => {
-    const { API_PORT } = process.env;
-    const port = process.env.PORT || API_PORT;
+    const {setLogged} = useContext(LoginContext);
+    // useEffect( async () => {
+    //     if (await checkToken()) {
+    //         setLogged(true);
+    //         window.location.replace('/register')
+    //     }
+    // },[])
     return (
         <div>
             <Navbar/>

@@ -19,9 +19,6 @@ const UsersSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    token:{
-        type:String,
-    }
 })
 
 export default mongoose.models.User || mongoose.model("User", UsersSchema)
