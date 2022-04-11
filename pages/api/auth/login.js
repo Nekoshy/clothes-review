@@ -30,9 +30,7 @@ export default async function login(req, res) {
             maxAge:1800,
             path:"/"
         }))
-        res.json({
-            token:token
-        })
+        res.writeHead(302, { Location: '/' });
         res.end()
         return;
     }

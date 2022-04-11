@@ -4,14 +4,13 @@ import {LoginContext} from "../context/logincontext";
 
 const Navbar = () => {
     const {logged, setLogged} = useContext(LoginContext);
-    console.log(logged);
     return(
         <div>
             <ul>
                 <li><a href='/'><img src='cloth-hanger.png' height='45px'/><img src='CRv2.png' className='crv'/></a></li>
                 <li><Link href="/shops"><a>Lista sklepów</a></Link></li>
                 {`${logged}`}
-                {logged? <li><a href='/login'>Wyloguj się<img src='user.png' height='35px' className='usericn'/></a></li> : <li><a href='/login'>Zalogujj się<img src='user.png' height='35px' className='usericn'/></a></li>}
+                {logged? <li><a href='api/auth/logout'>Wyloguj się<img src='user.png' height='35px' className='usericn'/></a></li> : <li><a href='/login'>Zaloguj się<img src='user.png' height='35px' className='usericn'/></a></li>}
             </ul>
             <style jsx>{`
                 ul {
