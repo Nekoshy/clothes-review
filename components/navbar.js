@@ -1,16 +1,28 @@
 import Link from 'next/link';
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
+import {UserContext} from "../context/usercontext";
+import Script from "next/script";
 import {LoginContext} from "../context/logincontext";
 
 const Navbar = () => {
-    const {logged, setLogged} = useContext(LoginContext);
+    const {logged, username} = useContext(LoginContext);
+
+    if (typeof window !== 'undefined') {
+        console.log('You are on the browser')
+        // document.getElementById('username').innerHTML = localStorage.getItem('username');
+        // console.log(username)
+        // 👉️ can use localStorage here
+    } else {
+        console.log('You are on the server')
+        // 👉️ can't use localStorage
+    }
     return(
         <div>
             <ul>
                 <li><a href='/'><img src='cloth-hanger.png' height='45px'/><img src='CRv2.png' className='crv'/></a></li>
                 <li><Link href="/shops"><a>Lista sklepów</a></Link></li>
-                {`${logged}`}
-                {logged? <li><a href='api/auth/logout'>Wyloguj się<img src='user.png' height='35px' className='usericn'/></a></li> : <li><a href='/login'>Zaloguj się<img src='user.png' height='35px' className='usericn'/></a></li>}
+                {/*{`${logged[0]}`}*/}
+                {logged[0]? <li><a href='/profile' style={{margin:'0 10px 0 0'}}>{`${username[0]}`}<img src='user.png' height='35px' className='usericn'/></a><a href='api/auth/logout'>Wyloguj się</a></li> : <li><a href='/login'>Zaloguj się<img src='user.png' height='35px' className='usericn'/></a></li>}
             </ul>
             <style jsx>{`
                 ul {
@@ -46,6 +58,8 @@ const Navbar = () => {
                 }
                 .usericn {
                 margin-left: 10px;
+                padding-right: 10px;
+                border-right: 3px solid #ed6b23;
                 }
             `}</style>
         </div>
