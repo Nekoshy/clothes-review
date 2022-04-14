@@ -5,9 +5,6 @@ const ShopsSchema = new mongoose.Schema({
         type:String,
         required:[true,"Podaj nazwę sklepu"]
     },
-    img:{
-        type:String
-    },
     link:{
         type:String,
         required:[true,"Podaj link do strony sklepu"]

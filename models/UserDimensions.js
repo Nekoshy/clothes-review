@@ -6,9 +6,8 @@ const UserDimensionsSchema = new mongoose.Schema({
         ref:"User",
         required:true,
     },
-    dimensionId:{
-        type:mongoose.Schema.ObjectId,
-        ref:"Dimension",
+    dimensionName:{
+        type:String,
         required:true,
     },
     value:{

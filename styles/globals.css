@@ -193,3 +193,7 @@ td {
 .align-items-start {
     align-items: start;
 }
+
+.text-middle {
+    line-height: 200px;
+}

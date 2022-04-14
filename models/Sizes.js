@@ -11,4 +11,4 @@ const SizesSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("Size",SizesSchema)
+export default mongoose.models.Size || mongoose.model("Size",SizesSchema)

@@ -3,26 +3,33 @@ import {useContext, useEffect} from "react";
 import {UserContext} from "../context/usercontext";
 import Script from "next/script";
 import {LoginContext} from "../context/logincontext";
+import axios from "axios";
 
 const Navbar = () => {
     const {logged, username} = useContext(LoginContext);
-
+    // const id = axios.post('/api/info/dimensions',{username}).then(res => {console.log(res.data[0]._id)});
+    // console.log(id);
     if (typeof window !== 'undefined') {
-        console.log('You are on the browser')
+        // console.log('You are on the browser')
         // document.getElementById('username').innerHTML = localStorage.getItem('username');
         // console.log(username)
         // 👉️ can use localStorage here
     } else {
-        console.log('You are on the server')
+        // console.log('You are on the server')
         // 👉️ can't use localStorage
     }
-    return(
+    return (
         <div>
             <ul>
-                <li><a href='/'><img src='cloth-hanger.png' height='45px'/><img src='CRv2.png' className='crv'/></a></li>
+                <li><a href='/'><img src='cloth-hanger.png' height='45px'/><img src='CRv2.png' className='crv'/></a>
+                </li>
                 <li><Link href="/shops"><a>Lista sklepów</a></Link></li>
                 {/*{`${logged[0]}`}*/}
-                {logged[0]? <li><a href='/profile' style={{margin:'0 10px 0 0'}}>{`${username[0]}`}<img src='user.png' height='35px' className='usericn'/></a><a href='api/auth/logout'>Wyloguj się</a></li> : <li><a href='/login'>Zaloguj się<img src='user.png' height='35px' className='usericn'/></a></li>}
+                {logged[0] ? <li><a href='/profile' style={{margin: '0 10px 0 0'}}>{`${username[0]}`}<img src='user.png'
+                                                                                                          height='35px'
+                                                                                                          className='usericn'/></a><a
+                        href='api/auth/logout'>Wyloguj się</a></li> :
+                    <li><a href='/login'>Zaloguj się<img src='user.png' height='35px' className='usericn'/></a></li>}
             </ul>
             <style jsx>{`
                 ul {

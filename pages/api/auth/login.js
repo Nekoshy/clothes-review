@@ -7,8 +7,6 @@ import React, {createContext, useContext, useState} from "react";
 import {UserContext} from "../../../context/usercontext";
 
 export default async function login(req, res) {
-    // const {u, setU} = useContext(UserContext);
-    // console.log('logowanie', u);
     const {username, password} = req.body
     await dbConnect()
     const user = await User.findOne({username})

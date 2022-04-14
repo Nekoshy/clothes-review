@@ -6,14 +6,13 @@ const SizeDimensionShopsSchema = new mongoose.Schema({
         ref:"Size",
         required:true,
     },
-    dimensionId:{
-        type:mongoose.Schema.ObjectId,
-        ref:"Dimension",
-        required:true,
-    },
     shopId:{
         type:mongoose.Schema.ObjectId,
         ref:"Shop",
+        required:true,
+    },
+    dimensionName:{
+        type:String,
         required:true,
     },
     value:{

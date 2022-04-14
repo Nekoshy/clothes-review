@@ -1,7 +1,19 @@
 import Navbar from '../components/navbar'
 import styles from '../styles/Shops.module.css'
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {useRouter} from "next/router";
 
 const Shops = () => {
+    const router = useRouter();
+    const [shops, setShops] = useState();
+    useEffect( () => {
+        axios.get('/api/shop/getShops').then(res => {
+            setShops(res.data.shops)
+        })
+    }, [])
+    console.log(shops)
+    const [shopID, setShopID] = useState('');
     return(
         <div>
             <Navbar/>
@@ -33,13 +45,22 @@ const Shops = () => {
                     </div>
                 </div>
                 <hr className={styles.hrstyle}></hr>
-                <div className='row'>
-                    <div className='orangeBorder d-flex' style={{width:'300px', height:'300px'}}>
-                        <div style={{width:'200px', height:'200px', margin:'auto'}}></div>
-                        <div className='row d-flex justify-center'>
-                            <button className='orangeButton' style={{width:'200px'}}>Sprawdź</button>
-                        </div>
-                    </div>
+                <div className='d-flex'>
+                {shops?.map((element) => {
+                        return (
+                            <>
+                                <div className='orangeBorder d-flex' style={{width:'300px', height:'300px', margin:'0 15px 15px 0'}}>
+                                    <div className='text-center' style={{width:'200px', height:'200px', margin:'auto'}}><h2 className='text-middle'>{element.name}</h2></div>
+                                    <div className='row d-flex justify-center'>
+                                        <button className='orangeButton' style={{width:'200px'}} onClick={(e) => {
+                                            setShopID(element._id)
+                                            router.push({pathname:'/shop', search:`?id=${element._id}`})}}>Sprawdź</button>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                }
+                    )}
                 </div>
             </div>
         </div>
