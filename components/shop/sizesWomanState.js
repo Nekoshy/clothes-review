@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-const SizesWomenState = ({sizesInfoWomen}) => {
+const SizesWomenState = ({sizesInfoWomen, finallSize}) => {
     const [sizeList] = useState(['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'])
     let heightarr = sizesInfoWomen?.filter(element => element.dimensionName === 'height' && element.gender === 'K');
     let chestarr = sizesInfoWomen?.filter(element => element.dimensionName === 'chest' && element.gender === 'K');
@@ -8,6 +9,7 @@ const SizesWomenState = ({sizesInfoWomen}) => {
     let waistbelowarr = sizesInfoWomen?.filter(element => element.dimensionName === 'waist_below' && element.gender === 'K');
     let hipsarr = sizesInfoWomen?.filter(element => element.dimensionName === 'hips' && element.gender === 'K');
     let sleevearr = sizesInfoWomen?.filter(element => element.dimensionName === 'sleeve' && element.gender === 'K');
+
     return (
         <>
             <h4>Tabela dla kobiet</h4>
@@ -120,6 +122,7 @@ const SizesWomenState = ({sizesInfoWomen}) => {
                     }
                 </tr>
             </table>
+            {finallSize?.k && (<h2>Twój rozmiar to: {finallSize.k}</h2>)}
         </>
     )
 }

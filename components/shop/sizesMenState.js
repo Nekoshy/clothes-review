@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const SizesMenState = ({sizesInfoMen}) => {
+const SizesMenState = ({sizesInfoMen, finallSize}) => {
     const [sizeList] = useState(['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'])
     let heightarr = sizesInfoMen?.filter(element => element.dimensionName === 'height' && element.gender === 'M');
     let chestarr = sizesInfoMen?.filter(element => element.dimensionName === 'chest' && element.gender === 'M');
@@ -119,6 +119,7 @@ const SizesMenState = ({sizesInfoMen}) => {
                     }
                 </tr>
             </table>
+            {finallSize?.m && (<h2>Twój rozmiar to: {finallSize.m}</h2>)}
         </>
     )
 }

@@ -12,29 +12,16 @@ const Shop = () => {
     const [shopInfo, setShopInfo] = useState();
     const [dimensionInfo, setDimensionInfo] = useState();
     const [sizeGender, setSizeGender] = useState();
+    const [finallSize, setFinallSize] = useState();
     console.log(dimensionInfo)
-    // const sizesInfoWomen = {
-    //         height: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''},
-    //         chest: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''},
-    //         waist: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''},
-    //         waist_below: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''},
-    //         hips: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''},
-    //         sleeve: {xxs:'', xs:'', s:'', m:'' , l:'' , xl:'' , xxl:''}
-    //     }
     let woman = false;
     let man = false;
     let test2;
-    // console.log(window.location.search.slice(4))
     useEffect(() => {
          axios.get(`/api/shop/getShop${window.location.search}`).then(res => {
-            // console.log(res.data)
             setShopInfo(res.data.shop);
             let test = res.data.dimen
-            // console.log(test[0])
-            // let test2 = {...test, gender:test.sizeId.gender, sizes:test.sizeId.sizes}
-
             test2 = test.map((element,index,arr) => {
-                // console.log(Object.values(element))
                 if (Object.values(element.sizeId).includes('K')) {
                     woman = true;
                 }
@@ -53,8 +40,9 @@ const Shop = () => {
             });
             setDimensionInfo(test2)
 
-                // console.log(sizesInfoWomen)
-
+             axios.get(`/api/info/userSizes${window.location.search}`).then((res) => {
+                 setFinallSize(res.data);
+             })
 
         })
         }, []
@@ -65,6 +53,7 @@ const Shop = () => {
     // console.log(shopInfo)
     // console.log(sizesInfoWomen)
     // console.log(dimensionInfo);
+
     return (
         <div>
             <Navbar/>
@@ -99,7 +88,7 @@ const Shop = () => {
                     </div>
                     <div className={styles.rightSide}>
                         <div className='row'>
-                            {sizeGender === 'both' ? <><SizesMenState sizesInfoMen={dimensionInfo}/><SizesWomenState sizesInfoWomen={dimensionInfo}/></> : sizeGender === 'woman' ? <SizesWomenState sizesInfoWomen={dimensionInfo}/> : sizeGender === 'man' ? <SizesMenState sizesInfoMen={dimensionInfo}/> : null}
+                            {sizeGender === 'both' ? <><SizesMenState sizesInfoMen={dimensionInfo} finallSize={finallSize}/><SizesWomenState sizesInfoWomen={dimensionInfo} finallSize={finallSize}/></> : sizeGender === 'woman' ? <SizesWomenState sizesInfoWomen={dimensionInfo} finallSize={finallSize}/> : sizeGender === 'man' ? <SizesMenState sizesInfoMen={dimensionInfo} finallSize={finallSize}/> : null}
                         </div>
                     </div>
                 </div>
